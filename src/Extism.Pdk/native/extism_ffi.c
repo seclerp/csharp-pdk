@@ -1,9 +1,9 @@
-﻿#pragma once
-#define NDEBUG
+﻿#define NDEBUG
 // https://github.com/dotnet/runtime/blob/v7.0.0/src/mono/wasi/mono-wasi-driver/driver.c
 #include <string.h>
 
-#include <mono-wasi/driver.h>
+// #include <mono-wasi/driver.h>
+#include <wasm/driver.h>
 #include <mono/metadata/exception.h>
 
 #include <stdint.h>

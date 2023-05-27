@@ -2,7 +2,18 @@
 
     <ItemGroup>
         <WasiNativeFileReference Include="$(MSBuildThisFileDirectory)..\native\extism_ffi.c" />
-        <WasiAfterRuntimeLoaded Include="extism_pdk_attach_internal_calls" />
+        <!-- For 8.0 WasiApp.Native.targets -->
+<!--        <NativeFileReference Include="$(MSBuildThisFileDirectory)..\native\extism_ffi.c" />-->
+<!--        <WasiAfterRuntimeLoaded Include="extism_pdk_attach_internal_calls" />-->
+        <_WasmCommonCFlags Include="-D WASI_AFTER_RUNTIME_LOADED_DECLARATIONS=&quot;void extism_pdk_attach_internal_calls()%3B &quot;"/>
+        <_WasmCommonCFlags Include="-D WASI_AFTER_RUNTIME_LOADED_CALLS=&quot;extism_pdk_attach_internal_calls()%3B &quot;"/>
     </ItemGroup>
+
+    <Target Name="AddPdkNativeCode" BeforeTargets="_WasiLink">
+        <ItemGroup>
+            <!--            <_WasmCommonIncludePaths Include="$(MSBuildThisFileDirectory)include" />-->
+            <_WasmRuntimePackSrcFile Include="$(MSBuildThisFileDirectory)..\native\extism_ffi.c" />
+        </ItemGroup>
+    </Target>
 
 </Project>

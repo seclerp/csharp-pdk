@@ -1,14 +1,12 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using System.Text;
 using Extism.Pdk.Native;
 
-using System.Text;
-
-namespace SamplePlugin;
+namespace SamplePluginNew;
 
 [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)]
 public class Functions
 {
-    [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.All)]
     [DynamicDependency(DynamicallyAccessedMemberTypes.All, typeof(Functions))]
     public static unsafe int CountVowels()
     {

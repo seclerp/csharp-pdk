@@ -12,9 +12,9 @@
 		<WasmNativeStrip>false</WasmNativeStrip>
 	</PropertyGroup>
 
-	<ItemGroup>
-		<PackageReference Include="Wasi.Sdk" Version="0.1.2-preview.10061" />
-	</ItemGroup>
+<!--	<ItemGroup>-->
+<!--		<PackageReference Include="Wasi.Sdk" Version="0.1.4-preview.10020" />-->
+<!--	</ItemGroup>-->
 
 	<Import Project="build\Extism.Pdk.targets" />
 
